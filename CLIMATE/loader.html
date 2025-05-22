@@ -1,0 +1,196 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading.....</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f0f9ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .loading-container {
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 0px #fff;
+        }
+        
+        .loading-text {
+            font-size: 1.5rem;
+            color: #4d96ff;
+            margin-bottom: 40px;
+        }
+        
+        .animation-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background-color: #ff9e9e;
+            border-radius: 50%;
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        .balloon:before {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 30px;
+            background-color: #ffd166;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .balloon:nth-child(1) {
+            left: 20px;
+            background-color: #ff9e9e;
+            animation-delay: 0s;
+        }
+        
+        .balloon:nth-child(2) {
+            left: 120px;
+            background-color: #86d0f8;
+            animation-delay: 0.5s;
+        }
+        
+        .balloon:nth-child(3) {
+            left: 220px;
+            background-color: #a0e7a0;
+            animation-delay: 1s;
+        }
+        
+        .cloud {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            bottom: 0;
+            opacity: 0.9;
+        }
+        
+        .cloud:nth-child(4) {
+            width: 60px;
+            height: 30px;
+            left: 30px;
+            animation: moveCloud 15s linear infinite;
+        }
+        
+        .cloud:nth-child(5) {
+            width: 100px;
+            height: 50px;
+            left: 200px;
+            animation: moveCloud 20s linear infinite;
+            animation-delay: 5s;
+        }
+        
+        .sun {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #ffde59;
+            border-radius: 50%;
+            top: 20px;
+            right: 30px;
+            box-shadow: 0 0 30px #ffde59;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+        
+        @keyframes moveCloud {
+            0% {
+                transform: translateX(-150px);
+            }
+            100% {
+                transform: translateX(350px);
+            }
+        }
+        
+        .progress-bar {
+            width: 300px;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            width: 0%;
+            background-color: #4d96ff;
+            border-radius: 10px;
+            animation: progress 3s infinite;
+        }
+        
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <h1>Come let build a better world</h1>
+        <div class="loading-text">Loading...</div>
+        
+        <div class="animation-container">
+            <div class="sun"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+  <script>
+    // Get the "next" page from URL (e.g., loader.html?next=index.html)
+    const urlParams = new URLSearchParams(window.location.search);
+    const nextPage = urlParams.get("next") || "home.html"; // default if none given
+
+    // Redirect after 3 seconds
+    setTimeout(() => {
+      window.location.href = nextPage;
+    }, 3000);
+  </script>
+</body>
+</html>
