@@ -74,7 +74,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background:linear-gradient(rgba(0, 0, 0, 0.555),rgba(0, 0, 0, 0.459),rgba(0, 0, 0, 0.418)),url(melissa-bradley-96iwiAxOuJw-unsplash.jpg) center/cover no-repeat;
+    background:linear-gradient(rgba(0, 0, 0, 0.555),rgba(0, 0, 0, 0.459),rgba(0, 0, 0, 0.418)),url('https://www.istockphoto.com/photo/fresh-green-hosta-leaves-covered-in-raindrops-gm1325027094-410174992?utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fgreen-vegetation&utm_medium=affiliate&utm_source=unsplash&utm_term=green+vegetation%3A%3A%3A') center/cover no-repeat;
     color: #fff;
     padding: 8rem 2rem;
     text-align: center;
